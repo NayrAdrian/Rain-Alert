@@ -9,6 +9,7 @@ MY_LONG = 121.086786  # Sample Coordinates
 weather_params = {
     "lat": MY_LAT,
     "lon": MY_LONG,
+    "cnt": 4,
     "appid": api_key,
 }
 
@@ -16,9 +17,10 @@ response = requests.get(OWM_Endpoint, params=weather_params)
 response.raise_for_status()
 weather_data = response.json()
 
-forecasts = weather_data["list"]
-for forecast in forecasts:
-    weather = forecast["weather"][0]
-    weather_id = weather["id"]
-    description = weather["description"]
-    print(f"Weather ID: {weather_id}, Description: {description}")
+will_rain = False
+for hour_data in weather_data["list"]:
+    condition_code = hour_data["weather"][0]["id"]
+    if int(condition_code) < 700:
+        will_rain = True
+if will_rain:
+    print("Bring an umbrella.")
