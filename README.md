@@ -1,7 +1,7 @@
 This program acts as a personal weather assistant. It regularly checks the weather API ("https://api.openweathermap.org/data/2.5/forecast) for rain predictions in your area. 
 If rain is imminent, it sends a timely SMS alert to your phone, keeping you prepared for the weather conditions.
 
-- Program uploaded to [pythonanywhere](https://www.pythonanywhere.com/), a web-based integrated development environment (IDE)
+- Program uploaded to [PythonAnywhere](https://www.pythonanywhere.com/), a web-based integrated development environment (IDE)
 and hosting service designed for Python programmers. It allows you to write, run, and host Python programs in the cloud.
 - Sets a scheduled task every 7:00am GMT+8 / 14:00 UTC, The program will run every morning and notifies the user if there
 is a probability of raining based on the data on openweathermap API.
